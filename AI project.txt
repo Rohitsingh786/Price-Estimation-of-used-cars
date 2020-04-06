@@ -1,0 +1,83 @@
+print("\t\tEstimation of price of used Cars")
+company=input("Enter the make of the car")
+model=input("Enter the model of the car")
+year=int(input("Enter the year in which the car is made"))
+km=int(input("Enter the distance driven in the car"))
+mileage=int(input("Enter the mileage of the car"))
+damage=int(input("Enter the number of damages/dents in the car"))
+int_condition=input("Enter the internalcondition of the car(bad,avergae,good,verygood)")
+ext_condition=input("Enter the external condition of the car(bad,average,good,verygood)")
+print("The details of the car")
+print("Brand - ",company)
+print("Model - ",model)
+print("Made in year - ",year)
+print("Kilometres driven - ",km)
+print("Mileage - ",mileage)
+print("No of dents - ",damage)
+print("Internal Condition - ",int_condition)
+print("External Condition - ",ext_condition)
+base_price = 500000
+
+if year < 2010 and year>2000 :
+    base_price -= 10000
+    print("The price has been reduced by 10000 as the car was made before 2010")
+if year<2000 :
+    base_price -= 25000
+    print("The price has been reduced by 25000 as the car was made before 2000")
+
+if km>30000 and km<40000 :
+    base_price -= 10000
+    print("The price has been reduced by 10000 as the distance driven in the car is between 30000 and 40000 Kilometres")
+if km>40000 and km<50000 :
+    base_price -= 20000
+    print("The price has been reduced by 20000 as the distance driven in the car is between 40000 and 50000 Kilometres")
+if km>50000 :
+    base_price -= 30000
+    print("The price has been reduced by 30000 as the distance driven in the car exceeds 50000 Kilometres")
+
+if mileage<20 and mileage>18 :
+    base_price -= 10000
+    print("The price has been reduced by 10000 as the mileage of the car is between 18-20 Kilometres")
+if mileage<18 and mileage>15 :
+    base_price -= 15000
+    print("The price has been reduced by 15000 as the mileage of the car is between 15-18 Kilometres")
+if mileage<15 :
+    base_price -=25000
+    print("The price has been reduced by 25000 as the mileage of the car is less than 15 Kilometres")
+
+if damage==1 :
+    base_price -=5000
+    print("The price has been reduced by 5000 as the car has 1 dent")
+if damage==2 :
+    base_price -=10000
+    print("The price has been reduced by 10000 as the car has 2 dents")
+if damage==3 :
+    base_price -=15000
+    print("The price has been reduced by 15000 as the car has 3 dents")
+if damage>=4 :
+    base_price -=20000
+    print("The price has been reduced by 20000 as the car has more than 3 dents")
+
+if int_condition=="good" :
+    base_price -= 10000
+    print("The Internal condition of the cars is good, so the price has been reduced by 10000")
+if int_condition=="average" :
+    base_price -= 25000
+    print("The Internal condition of the cars is average, so the price has been reduced by 25000")
+if int_condition=="bad" :
+    base_price-=40000
+    print("The Internal condition of the cars is bad, so the price has been reduced by 40000")
+
+if ext_condition =="good" :
+    base_price -=7500
+    print("The External condition of the cars is good, so the price has been reduced by 7500")
+if ext_condition=="average" :
+    base_price -=15000
+    print("The External condition of the cars is average, so the price has been reduced by 15000")
+if ext_condition=="bad" :
+    base_price -=25000
+    print("The External condition of the cars is bad, so the price has been reduced by 25000")
+
+print("The estimated price of the used car with the information provided is ",base_price)
+
+
